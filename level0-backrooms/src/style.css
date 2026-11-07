@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Oswald:wght@500;600&display=swap');
+*{box-sizing:border-box}html,body,#app{margin:0;width:100%;height:100%;overflow:hidden;background:#090807;color:#e8dfc7;font-family:'IBM Plex Mono',monospace}
+canvas{display:block;position:fixed;inset:0}
+#intro,#end{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at center,rgba(36,31,19,.78),rgba(4,4,3,.97))}
+.eyebrow{font-size:10px;letter-spacing:4px;color:#a89b70;margin-bottom:22px}
+h1{font:600 clamp(76px,14vw,150px)/.85 'Oswald',sans-serif;letter-spacing:8px;margin:0;color:#e7d99b;text-shadow:0 0 30px #b79c4933}
+h1 span{color:#8e7940}.subtitle{letter-spacing:8px;font-size:13px;color:#c8b77d;margin:20px 0 35px}
+.copy{font-size:12px;line-height:2;color:#aaa18c;margin:0 0 35px}
+button{background:#c7b779;border:0;color:#15130d;padding:15px 28px;font:600 12px 'IBM Plex Mono';letter-spacing:2px;cursor:pointer;transition:.2s}
+button:hover{background:#f0e3a7;box-shadow:0 0 28px #d9c77b55;transform:translateY(-2px)}
+.controls{margin-top:45px;font-size:9px;letter-spacing:1px;color:#817b69}
+.warning{position:absolute;bottom:24px;font-size:9px;letter-spacing:2px;color:#625d4e}
+.hidden{display:none!important}
+#hud{position:fixed;inset:0;z-index:2;pointer-events:none}
+.hud-top{position:absolute;top:22px;left:25px;right:25px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:3px;color:#ded3a6;text-shadow:0 2px 5px #000}
+#crosshair{position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:#eee5c7;box-shadow:0 0 8px #fff}
+#keys{position:absolute;bottom:26px;left:26px;font-size:10px;letter-spacing:2px;color:#d9d0ae}
+#keys b{font-size:16px;margin-left:8px;color:#fff}
+#message{position:absolute;bottom:70px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:2px;color:#e6d99f;text-shadow:0 2px 8px #000;white-space:nowrap}
+#vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 38%,rgba(0,0,0,.25) 100%)}
+#scare{position:fixed;inset:0;z-index:8;background:#050403;display:flex;align-items:center;justify-content:center;flex-direction:column;animation:flash .12s steps(2) infinite}
+.scare-face{width:min(45vw,330px);height:min(55vh,390px);background:radial-gradient(ellipse at 50% 42%,#181512 0 20%,#030303 55%);clip-path:polygon(50% 0,82% 18%,100% 62%,75% 100%,25% 100%,0 62%,18% 18%);filter:drop-shadow(0 0 35px #a00)}
+.scare-face:after{content:"";display:block;width:100%;height:100%;background:radial-gradient(ellipse at 36% 42%,#eee 0 3%,transparent 4%),radial-gradient(ellipse at 64% 42%,#eee 0 3%,transparent 4%),radial-gradient(ellipse at 50% 69%,#600 0 4%,transparent 5%)}
+.scare-text{font:600 34px 'Oswald';letter-spacing:8px;color:#eee;margin-top:24px}
+@keyframes flash{0%,100%{filter:brightness(.7)}50%{filter:brightness(1.5)}}
+#end h2{font:600 clamp(44px,8vw,90px) 'Oswald';letter-spacing:5px;color:#e4d69c}
+#end p{font-size:11px;color:#a49b83;margin:0 0 30px}
+@media(max-width:600px){.controls{padding:0 20px;line-height:2.2}.warning{padding:0 15px;text-align:center}.hud-top{left:14px;right:14px}}

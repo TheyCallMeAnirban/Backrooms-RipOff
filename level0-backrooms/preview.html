@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creep Creature Asset Preview</title>
+    <style>
+      body {
+        margin: 0;
+        background: #0d0c0a;
+        color: #e6dfc8;
+        font-family: monospace;
+        overflow: hidden;
+      }
+      #canvas-container {
+        width: 100vw;
+        height: 100vh;
+      }
+      #ui {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: rgba(15, 14, 12, 0.88);
+        padding: 16px;
+        border: 1px solid #4a4435;
+        border-radius: 4px;
+        max-width: 320px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+        z-index: 10;
+      }
+      h2 {
+        margin: 0 0 10px;
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: #e5d38a;
+      }
+      .row {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      label {
+        font-size: 10px;
+        color: #9d947f;
+        letter-spacing: 1px;
+      }
+      select, button {
+        background: #25221b;
+        color: #e8dfc7;
+        border: 1px solid #5a5241;
+        padding: 6px 8px;
+        font-family: monospace;
+        font-size: 11px;
+        border-radius: 2px;
+        outline: none;
+      }
+      select:focus, button:focus {
+        border-color: #d8c273;
+      }
+      button {
+        cursor: pointer;
+        transition: 0.15s;
+      }
+      button:hover {
+        background: #3c372b;
+      }
+      #stats {
+        font-size: 10px;
+        line-height: 1.6;
+        color: #b3a992;
+        border-top: 1px solid #3c372b;
+        padding-top: 8px;
+        margin-top: 8px;
+      }
+      #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        letter-spacing: 3px;
+        color: #e5d38a;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 12px 24px;
+        border: 1px solid #665b3c;
+      }
+      .nav-link {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 10px;
+        color: #d8c273;
+        text-decoration: none;
+      }
+      .nav-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loading">LOADING FBX CREATURE...</div>
+    <div id="ui">
+      <h2>CREEP PREVIEW</h2>
+      <div class="row">
+        <label>MODEL LOD</label>
+        <select id="lodSelect">
+          <option value="/preview/Creep.fbx">Hero LOD0 (Creep.fbx)</option>
+          <option value="/preview/Creep_lod1.fbx">Distance LOD1 (Creep_lod1.fbx)</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>TEXTURE SKIN</label>
+        <select id="skinSelect">
+          <option value="tex">Skin 1 (Dark / Standard - tex)</option>
+          <option value="tex2">Skin 2 (Desaturated / Mottled - tex2)</option>
+          <option value="tex3">Skin 3 (Pale / Decayed - tex3)</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>ANIMATION CLIP</label>
+        <select id="animSelect"></select>
+      </div>
+      <div class="row" style="flex-direction: row; gap: 8px;">
+        <button id="toggleWireframe" style="flex: 1;">Wireframe</button>
+        <button id="resetCam" style="flex: 1;">Reset Cam</button>
+      </div>
+      <div id="stats">
+        Triangles: <span id="triCount">-</span><br>
+        Bones: <span id="boneCount">-</span><br>
+        Meshes: <span id="meshCount">-</span>
+      </div>
+      <a href="/" class="nav-link">&larr; Return to Game</a>
+    </div>
+    <div id="canvas-container"></div>
+    <script type="module" src="/src/preview/creature_preview.js"></script>
+  </body>
+</html>
+

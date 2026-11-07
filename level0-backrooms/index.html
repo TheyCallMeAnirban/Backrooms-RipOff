@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEVEL 0 — Don't Look Back</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="intro">
+        <div class="eyebrow">AN UNOFFICIAL LIMINAL HORROR PROTOTYPE</div>
+        <h1>LEVEL <span>0</span></h1>
+        <p class="subtitle">DON'T LOOK BACK</p>
+        <p class="copy">You don't remember entering.<br>Find the exit. Don't let it find you.</p>
+        <button id="start">ENTER THE LEVEL</button>
+        <div class="controls">WASD MOVE&nbsp;&nbsp; • &nbsp;&nbsp;MOUSE LOOK&nbsp;&nbsp; • &nbsp;&nbsp; C / CTRL CROUCH&nbsp;&nbsp; • &nbsp;&nbsp; SHIFT SPRINT&nbsp;&nbsp; • &nbsp;&nbsp; F FLASHLIGHT</div>
+        <div class="warning">HEADPHONES RECOMMENDED · AUDIO STARTS AFTER ENTERING</div>
+        <div style="margin-top: 15px;"><a href="/preview.html" style="color: #c8b77d; font-size: 10px; letter-spacing: 2px; text-decoration: none; border-bottom: 1px dotted #8e7940;">[ OPEN CREATURE PREVIEW SCENE ]</a></div>
+      </div>
+      <div id="hud" class="hidden">
+        <div class="hud-top"><span>LEVEL 0</span><span id="objective">FIND THE EXIT</span></div>
+        <div id="crosshair"></div>
+        <div id="keys">KEYS <b id="keyCount">0</b> / 3</div>
+        <div id="message"></div>
+        <div id="vignette"></div>
+      </div>
+      <div id="scare" class="hidden">
+        <div class="scare-face"></div>
+        <div class="scare-text">IT FOUND YOU</div>
+      </div>
+      <div id="end" class="hidden">
+        <h2 id="endTitle">YOU ESCAPED</h2>
+        <p id="endCopy">Somewhere, another fluorescent light begins to buzz.</p>
+        <button id="restart">TRY AGAIN</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/autostart.js"></script>
+  </body>
+</html>
