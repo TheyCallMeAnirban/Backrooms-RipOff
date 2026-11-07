@@ -128,3 +128,4 @@ Detailed licensing records and asset origins are tracked in [ASSET_MANIFEST.md](
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
+
